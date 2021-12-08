@@ -6,7 +6,7 @@ import plotly.express as px
 
 import matplotlib.pyplot as plt
 DATE_TIME = "date/time"
-DATA_URL = pd.read_csv("https://github.com/shraiyya/Carify/blob/main/Datasets/SIH.csv",error_bad_lines=False)
+DATA_URL = pd.read_csv("Datasets/SIH.csv",error_bad_lines=False)
 
 st.title("CARIFY - VEHICLE MAINTENENCE")
 st.markdown("WELCOME TO CARIFY 💥")
@@ -28,9 +28,9 @@ cv2.imshow('Image', img)
 st.image(img, width=445)
 '''
 from PIL import Image
-img=Image.open('https://github.com/shraiyya/Carify/blob/main/Images/toyota.jpeg')
+img=Image.open('Images/toyota.jpeg')
 st.image(img, width=445)
-image = Image.open('https://github.com/shraiyya/Carify/blob/main/Images/mghector.jpeg')
+image = Image.open('Images/mghector.jpeg')
 st.image(image, width=445)
 ##st.write(DATA_URL,width=1000,height=1000)
 
