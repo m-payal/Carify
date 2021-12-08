@@ -19,7 +19,6 @@ st.write("          HOME")
 # }
 # </style>
 # '''
-#
 # st.markdown(page_bg_img, unsafe_allow_html=True)
 from cv2 import cv2
 
