@@ -2,8 +2,6 @@ streamlit
 pandas 
 numpy 
 pydeck 
-opencv-python-headless
-opencv-contrib-python
 plotly.express
 matplotlib
 sklearn
