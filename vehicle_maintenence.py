@@ -21,12 +21,6 @@ st.write("          HOME")
 # '''
 # st.markdown(page_bg_img, unsafe_allow_html=True)
 
-'''
-from cv2 import cv2
-img=cv2.imread("https://github.com/shraiyya/Carify/blob/main/Images/toyota.jpeg")
-cv2.imshow('Image', img)
-st.image(img, width=445)
-'''
 from PIL import Image
 img=Image.open('Images/toyota.jpeg')
 st.image(img, width=445)
