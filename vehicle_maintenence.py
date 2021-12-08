@@ -23,13 +23,15 @@ st.write("          HOME")
 # st.markdown(page_bg_img, unsafe_allow_html=True)
 from cv2 import cv2
 
+'''
 img=cv2.imread("https://github.com/shraiyya/Carify/blob/main/Images/toyota.jpeg")
 cv2.imshow('Image', img)
 st.image(img, width=445)
+'''
 from PIL import Image
+img=Image.open("https://github.com/shraiyya/Carify/blob/main/Images/toyota.jpeg")
+st.image(img, width=445)
 image = Image.open('https://github.com/shraiyya/Carify/blob/main/Images/mghector.jpeg')
-# img1=cv2.imread("https://github.com/shraiyya/Carify/blob/main/Images/mghector.jpeg")
-# cv2.imshow('Image', img1)
 st.image(image, width=445)
 ##st.write(DATA_URL,width=1000,height=1000)
 
