@@ -20,9 +20,9 @@ st.write("          HOME")
 # </style>
 # '''
 # st.markdown(page_bg_img, unsafe_allow_html=True)
-from cv2 import cv2
 
 '''
+from cv2 import cv2
 img=cv2.imread("https://github.com/shraiyya/Carify/blob/main/Images/toyota.jpeg")
 cv2.imshow('Image', img)
 st.image(img, width=445)
