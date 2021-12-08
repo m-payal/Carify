@@ -28,7 +28,7 @@ cv2.imshow('Image', img)
 st.image(img, width=445)
 '''
 from PIL import Image
-img=Image.open("https://github.com/shraiyya/Carify/blob/main/Images/toyota.jpeg")
+img=Image.open('https://github.com/shraiyya/Carify/blob/main/Images/toyota.jpeg')
 st.image(img, width=445)
 image = Image.open('https://github.com/shraiyya/Carify/blob/main/Images/mghector.jpeg')
 st.image(image, width=445)
