@@ -222,7 +222,7 @@ if st.sidebar.checkbox("VISUALIZATION", False):
     height = df["Total cost"]
     st.write("COST vs CITY")
     tick_label=['Mumbai','Delhi','Vishakhapattanam','Srinagar']
-    ax.set_xticks(tick_label)    
+    ax.set_xticklabels(tick_label)    
     plt.scatter(left, height, color=['orange'])
     plt.xlabel('City')
     plt.ylabel('Total cost')
@@ -234,7 +234,7 @@ if st.sidebar.checkbox("VISUALIZATION", False):
     grouped1 = DATA_URL.groupby(['Company'])
     st.write("COST vs Company")
     tick_label=['Hyundai','Ford','Honda','KIA']
-    ax.set_xticks(tick_label)    
+    ax.set_xticklabels(tick_label)    
     plt.bar(left, height, color=['orange'])
     plt.xlabel('Model')
     plt.ylabel('Total cost')
