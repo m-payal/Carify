@@ -217,6 +217,9 @@ if st.sidebar.checkbox("COMPARE TWO CARS?", False):
         grouped = DATA_URL.groupby(['Company', 'Model', 'Fuel', 'City'])
         g = grouped.get_group((selectt, selectt1, selectt4, selectt2))
         st.write(g)
+        
+        g1 = grouped.get_group((selecttt, selecttt1, selecttt4, selecttt2))
+        st.write(g1)
  # ------------------------------- VISUALISATION -----------------------------------------------------------
 if st.sidebar.checkbox("VISUALIZATION", False):
 
@@ -229,7 +232,7 @@ if st.sidebar.checkbox("VISUALIZATION", False):
     st.write("COST vs CITY")
     tick_label=['Mumbai','Delhi','Vishakhapattanam','Srinagar']
     plt.scatter(left, height, color=['orange'])
-    plt.xlabel('City',tick_label)
+    plt.xlabel('City')
     plt.ylabel('Total cost')
 
     st.plotly_chart(fig)
