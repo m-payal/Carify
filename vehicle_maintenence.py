@@ -225,7 +225,7 @@ if st.sidebar.checkbox("VISUALIZATION", False):
 
 
     left = df["Company"]
-    height =np.array(DATA_URL.groupby(['Company']).['Total cost'].sum())
+    height = DATA_URL.groupby(['Company']).['Total cost'].sum()
     st.write("COST vs Company")
     tick_label=['Hyundai','Ford','Honda','KIA']
     ax.set_xticklabels(tick_label)    
