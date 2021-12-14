@@ -162,8 +162,8 @@ if st.sidebar.checkbox("KNOW information about your CAR.", False):
         plt.scatter(left,height, color=['orange'])
         plt.xlabel('Mileage')
         plt.ylabel('Total cost')
-
         st.plotly_chart(fig)
+        
  # -------------------------------- COMPARISON ----------------------------------------------------------
 if st.sidebar.checkbox("COMPARE TWO CARS?", False):
     st.subheader("COMPARE TWO CAR")
