@@ -223,9 +223,9 @@ if st.sidebar.checkbox("VISUALIZATION", False):
     st.plotly_chart(fig)
 
 
-
+    grouped1=df.groupby(['Company'])
     left = df["Company"]
-    height = df.groupby(['Company']).['Total cost'].sum()
+    height = grouped1['Total cost'].sum()
     st.write("COST vs Company")
     tick_label=['Hyundai','Ford','Honda','KIA']
     ax.set_xticklabels(tick_label)    
