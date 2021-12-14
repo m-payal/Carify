@@ -225,10 +225,9 @@ if st.sidebar.checkbox("VISUALIZATION", False):
 
 
     grouped1=df.groupby(['Company'])
-    left = df["Company"]
-    height = grouped1['Total cost']
+    left = ['Hyundai','Ford','Honda','KIA']
+    height = grouped1['Total cost'].sum()
     st.write("COST vs Company")
-    tick_label=['Hyundai','Ford','Honda','KIA']
     ax.set_xticklabels(tick_label)    
     plt.bar(left, height, color=['orange','blue','green','red'])
     plt.xlabel('Company')
