@@ -211,12 +211,13 @@ if st.sidebar.checkbox("VISUALIZATION", False):
     import matplotlib.pyplot as plt
 
     fig= plt.figure()
+    ax=plt.axes()
     df=DATA_URL
     left = df["City"]
     height = df["Total cost"]
     st.write("COST vs CITY")
     tick_label=['Mumbai','Delhi','Vishakhapattanam','Srinagar','Shimla']
-    plt.set_xticklabels(tick_label)    
+    ax.set_xticklabels(tick_label)    
     plt.scatter(left, height, color=['orange'])
     plt.xlabel('City')
     plt.ylabel('Total cost')
@@ -228,7 +229,7 @@ if st.sidebar.checkbox("VISUALIZATION", False):
     height = grouped1['Total cost']
     st.write("COST vs Company")
     tick_label=['Hyundai','Ford','Honda','KIA']
-    plt.set_xticklabels(tick_label)    
+    ax.set_xticklabels(tick_label)    
     plt.bar(left, height, color=['orange','blue','green','red'])
     plt.xlabel('Company')
     plt.ylabel('Total cost')
