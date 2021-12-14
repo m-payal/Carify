@@ -206,10 +206,10 @@ if st.sidebar.checkbox("COMPARE TWO CARS?", False):
     if selecttt == 'Honda':
         selecttt1 = st.selectbox('Model Name.', ['Amaze', 'City(2014)', 'WR-V'],key=2)
     if selectt == 'KIA':
-        selecttt1 = st.selectbox('Model Name.', ['Carnival'])
+        selecttt1 = st.selectbox('Model Name.', ['Carnival'],key=2)
 
-    selecttt2 = st.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapattnam'])
-    selecttt4 = st.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'])
+    selecttt2 = st.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapattnam'],key=2)
+    selecttt4 = st.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'],key=2)
     selecttt3 = st.slider("Age of the vehicle", 0, 200)
 
     if st.button('Compare'):
