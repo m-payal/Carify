@@ -49,7 +49,7 @@ if st.sidebar.checkbox("KNOW information about your CAR.", False):
     if select == 'KIA':
         select1 = st.sidebar.selectbox('Model', ['Carnival'])
 
-    select2 = st.sidebar.selectbox('City', ['Mumbai','Delhi','Srinagar','Shimla','Vishakhapatnam'])
+    select2 = st.sidebar.selectbox('City', ['Mumbai','Delhi','Srinagar','Shimla','Vishakhapattnam'])
     select4 = st.sidebar.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'])
     select3 = st.sidebar.text_input('Enter Age of Vehicle here:')
     st.write("Check show data to get the information.")
@@ -193,7 +193,7 @@ if st.sidebar.checkbox("COMPARE TWO CARS?", False):
     if selectt == 'KIA':
         selectt1 = st.selectbox('Model Name', ['Carnival'])
 
-    selectt2 = st.selectbox('City', ['Mumbai','Delhi','Srinagar','Shimla','Vishakhapatnam'])
+    selectt2 = st.selectbox('City', ['Mumbai','Delhi','Srinagar','Shimla','Vishakhapattnam'])
     selectt4 = st.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'])
     selectt3 = st.slider("Age of the vehicle.", 0, 200)
 
@@ -208,7 +208,7 @@ if st.sidebar.checkbox("COMPARE TWO CARS?", False):
     if selectt == 'KIA':
         selecttt1 = st.selectbox('Model Name.', ['Carnival'])
 
-    selecttt2 = st.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapatnam'])
+    selecttt2 = st.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapattnam'])
     selecttt4 = st.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'])
     selecttt3 = st.slider("Age of the vehicle", 0, 200)
 
