@@ -217,7 +217,7 @@ if st.sidebar.checkbox("VISUALIZATION", False):
     height = grouped1['Total cost'].sum()
     st.write("COST vs CITY")
     ax.set_xticklabels(left)    
-    plt.scatter(np.arrange(6), height, color=['orange'])
+    plt.scatter(np.arange(6), height, color=['orange'])
     plt.xlabel('City')
     plt.ylabel('Total cost')
     st.plotly_chart(fig)
