@@ -66,9 +66,9 @@ if st.sidebar.checkbox("KNOW information about your CAR.", False):
     import pandas as pd
     import matplotlib
     if st.checkbox("Show data", False):
-        st.write(DATA_URL.columns)
+        #st.write(DATA_URL.columns)
         grouped=DATA_URL.groupby(['Company','Model','City','Fuel'])
-        g=grouped.get_group((select,select1,select2,select4))
+        g=grouped.get_group((select,select1,select4,select2))
         st.write(g)
 
         from sklearn.model_selection import train_test_split
