@@ -210,28 +210,26 @@ if st.sidebar.checkbox("VISUALIZATION", False):
 
     import matplotlib.pyplot as plt
 
-    fig= plt.figure()
-    ax=plt.axes()
+    fig, ax = plt.subplots()
     df=DATA_URL
     grouped1=df.groupby(['City'])
-    left = ['Mumbai','Delhi','Vishakhapattanam','Srinagar','Shimla']
+    left = df['City'].unique()
     height = grouped1['Total cost'].sum()
     st.write("COST vs CITY")
     ax.set_xticklabels(left)    
-    plt.scatter(left, height, color=['orange'])
+    plt.scatter(np.arrange(6), height, color=['orange'])
     plt.xlabel('City')
     plt.ylabel('Total cost')
     st.plotly_chart(fig)
 
 
-    fig= plt.figure()
-    ax=plt.axes()
+    fig, ax = plt.subplots()
     grouped1=df.groupby(['Company'])
     left = ['Hyundai','Ford','Honda','KIA']
     height = grouped1['Total cost'].sum()
     st.write("COST vs Company")
     ax.set_xticklabels(left)    
-    plt.bar(left, height, label=left)
+    plt.bar( np.arange(4), height, label=left)
     plt.xlabel('Company')
     plt.ylabel('Total cost')
     st.plotly_chart(fig)
