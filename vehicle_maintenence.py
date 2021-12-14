@@ -224,6 +224,8 @@ if st.sidebar.checkbox("VISUALIZATION", False):
     st.plotly_chart(fig)
 
 
+    fig= plt.figure()
+    ax=plt.axes()
     grouped1=df.groupby(['Company'])
     left = ['Hyundai','Ford','Honda','KIA']
     height = grouped1['Total cost'].sum()
