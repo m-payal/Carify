@@ -67,7 +67,7 @@ if st.sidebar.checkbox("KNOW information about your CAR.", False):
     import matplotlib
     if st.checkbox("Show data", False):
         #st.write(DATA_URL.columns)
-        grouped=DATA_URL.groupby(['Company','Model','City','Fuel'])
+        grouped=DATA_URL.groupby(['Company','Model','Fuel','City'])
         g=grouped.get_group((select,select1,select4,select2))
         st.write(g)
 
@@ -214,8 +214,8 @@ if st.sidebar.checkbox("COMPARE TWO CARS?", False):
 
     if st.button('Compare'):
         st.write("Comparing.....")
-        grouped = DATA_URL.groupby(['Company', 'Model', 'City', 'Fuel'])
-        g = grouped.get_group((selectt, selectt1, selectt2, selectt4))
+        grouped = DATA_URL.groupby(['Company', 'Model', 'Fuel', 'City'])
+        g = grouped.get_group((selectt, selectt1, selectt4, selectt2))
         st.write(g)
  # ------------------------------- VISUALISATION -----------------------------------------------------------
 if st.sidebar.checkbox("VISUALIZATION", False):
