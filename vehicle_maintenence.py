@@ -213,11 +213,11 @@ if st.sidebar.checkbox("VISUALIZATION", False):
     fig= plt.figure()
     ax=plt.axes()
     df=DATA_URL
-    left = df["City"]
-    height = df["Total cost"]
+    grouped1=df.groupby(['City'])
+    left = ['Mumbai','Delhi','Vishakhapattanam','Srinagar','Shimla']
+    height = grouped1['Total cost'].sum()
     st.write("COST vs CITY")
-    tick_label=['Mumbai','Delhi','Vishakhapattanam','Srinagar','Shimla']
-    ax.set_xticklabels(tick_label)    
+    ax.set_xticklabels(left)    
     plt.scatter(left, height, color=['orange'])
     plt.xlabel('City')
     plt.ylabel('Total cost')
@@ -230,8 +230,8 @@ if st.sidebar.checkbox("VISUALIZATION", False):
     left = ['Hyundai','Ford','Honda','KIA']
     height = grouped1['Total cost'].sum()
     st.write("COST vs Company")
-    ax.set_xticklabels(tick_label)    
-    plt.bar(left, height, color=['orange','blue','green','red'])
+    ax.set_xticklabels(left)    
+    plt.bar(left, height, label=left)
     plt.xlabel('Company')
     plt.ylabel('Total cost')
     st.plotly_chart(fig)
