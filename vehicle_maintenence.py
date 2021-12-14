@@ -11,15 +11,6 @@ DATA_URL = pd.read_csv("Datasets/SIH.csv",error_bad_lines=False)
 st.title("CARIFY - VEHICLE MAINTENENCE")
 st.markdown("WELCOME TO CARIFY 💥")
 st.write("          HOME")
-# page_bg_img = '''
-# <style>
-# body {
-# background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
-# background-size: cover;
-# }
-# </style>
-# '''
-# st.markdown(page_bg_img, unsafe_allow_html=True)
 
 from PIL import Image
 img=Image.open('Images/toyota.jpeg')
@@ -234,18 +225,16 @@ if st.sidebar.checkbox("VISUALIZATION", False):
     plt.scatter(left, height, color=['orange'])
     plt.xlabel('City')
     plt.ylabel('Total cost')
-
     st.plotly_chart(fig)
-    # ------------------------------------------------------------------------------------------
 
     fig = plt.figure()
     left = DATA_URL
-    height = hash(tuple(df['Total cost']))
+    height = np.array(df['Total cost'])
     grouped1 = DATA_URL.groupby(['Company'])
     st.write("COST vs MODEL")
     tick_label=['Hyundai','Ford','Honda','KIA']
     plt.bar(left, height, color=['orange'])
-    plt.xlabel('Model',tick_label)
+    plt.xlabel('Model')
     plt.ylabel('Total cost')
     st.plotly_chart(fig)
 
