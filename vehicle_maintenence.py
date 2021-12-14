@@ -228,8 +228,8 @@ if st.sidebar.checkbox("VISUALIZATION", False):
     st.plotly_chart(fig)
 
     fig = plt.figure()
-    left = DATA_URL
-    height = np.array(df['Total cost'])
+    left = df["Model"]
+    height =df['Total cost']
     grouped1 = DATA_URL.groupby(['Company'])
     st.write("COST vs MODEL")
     tick_label=['Hyundai','Ford','Honda','KIA']
