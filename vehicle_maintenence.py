@@ -44,13 +44,7 @@ if st.sidebar.checkbox("KNOW information about your CAR.", False):
     select4 = st.sidebar.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'])
     select3 = st.sidebar.text_input('Enter Age of Vehicle here:')
     st.write("Check show data to get the information.")
-    #fig = px.scatter(DATA_URL_3, x="Dates", y="Confirmed")
-    #st.write(fig)
 
-    #fig1 = plt.figure()
-    #plt.plot("Dates","Confirmed", data=DATA_URL_3, linestyle='-', marker='o')
-
-    #st.plotly_chart(fig1)
     # ----------------------------------- PROBABILITY ------------------------------------------------
     import numpy as np
     import scipy.stats
@@ -229,14 +223,14 @@ if st.sidebar.checkbox("VISUALIZATION", False):
     st.plotly_chart(fig)
 
 
-    grouped1 = DATA_URL.groupby(['Company'])
+
     left = df["Company"]
-    height =grouped1['Total cost']
+    height =np.array(DATA_URL.groupby(['Company']).['Total cost'].sum())
     st.write("COST vs Company")
     tick_label=['Hyundai','Ford','Honda','KIA']
     ax.set_xticklabels(tick_label)    
-    plt.bar(left, height, color=['orange'])
-    plt.xlabel('Model')
+    plt.bar(left, height, color=['blue'])
+    plt.xlabel('Companu')
     plt.ylabel('Total cost')
     st.plotly_chart(fig)
 
