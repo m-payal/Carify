@@ -2,9 +2,9 @@ import streamlit as st
 import time
 import numpy as np
 
-st.set_page_config(page_title="Information about your Car", page_icon="📈")
+st.set_page_config(page_title="Your Car Information", page_icon="📈")
 
-st.header("Know more about your car")
+st.header("Get to know more about your car's life by simply filling few details")
 st.subheader("Please fill in the details")
 select = st.selectbox('Company', ['Hyundai','Ford','Honda','KIA'])
 if select =='Hyundai':
