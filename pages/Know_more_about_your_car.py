@@ -5,6 +5,9 @@ import scipy.stats
 import pandas as pd
 import matplotlib
    
+DATE_TIME = "date/time"
+DATA_URL = pd.read_csv("Datasets/SIH.csv",error_bad_lines=False)
+
 st.set_page_config(page_title="Your Car Information", page_icon="📈")
 
 st.header("Get to know more about your car's life by simply filling few details")
