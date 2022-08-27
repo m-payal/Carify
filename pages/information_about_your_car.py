@@ -5,7 +5,7 @@ import numpy as np
 st.set_page_config(page_title="Information about your Car", page_icon="📈")
 
 st.header("Know more about your car")
-st.ubheader("Please fill in the details")
+st.subheader("Please fill in the details")
 select = st.selectbox('Company', ['Hyundai','Ford','Honda','KIA'])
 if select =='Hyundai':
     select1 = st.selectbox('Model', ['All New Santro', 'Creta', 'Grand i10','i20'])
