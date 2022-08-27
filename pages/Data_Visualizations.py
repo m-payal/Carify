@@ -8,6 +8,8 @@ import matplotlib.pyplot as plt
 DATE_TIME = "date/time"
 DATA_URL = pd.read_csv("Datasets/SIH.csv",error_bad_lines=False)
 
+st.set_page_config(page_title="Car Data Visualizations", page_icon="📈")
+
 fig, ax = plt.subplots()
 df=DATA_URL
 grouped1=df.groupby(['City'])
