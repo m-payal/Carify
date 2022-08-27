@@ -1,7 +1,10 @@
 import streamlit as st
 import time
 import numpy as np
-
+import scipy.stats
+import pandas as pd
+import matplotlib
+   
 st.set_page_config(page_title="Your Car Information", page_icon="📈")
 
 st.header("Get to know more about your car's life by simply filling few details")
@@ -22,4 +25,29 @@ select3 = st.text_input('Enter Age of Vehicle here:')
 st.write("Check show data to get the information.")
     
 st.text("\n")
+if st.checkbox("Show data", False):
+    #st.write(DATA_URL.columns)
+    grouped=DATA_URL.groupby(['Company','Model','Fuel','City'])
+    g=grouped.get_group((select,select1,select4,select2))
+    st.write(g)
 
+    from sklearn.model_selection import train_test_split
+    d=g.loc[g["Age of Vehicle"] == select3]
+    if(d['AC Dust Filter'].values == [0]):
+           st.write("Probability of getting AC Dust Filter changed")
+           st.write(0, "%")
+    else:
+        st.write("Probability of getting AC Dust Filter changed")
+        st.write(100, "%")
+    if(d['Engine oil'].values == [0]):
+           st.write("Probability of getting Engine oil changed")
+           st.write(0, "%")
+    else:
+        st.write("Probability of getting Engine oil changed")
+        st.write(100, "%")
+    if(d['Air cleaner filter'].values == [0]):
+           st.write("Probability of getting Air cleaner filter changed")
+           st.write(0, "%")
+    else:
+        st.write("Probability of getting Air cleaner filter changed")
+        st.write(100, "%")
