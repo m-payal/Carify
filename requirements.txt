@@ -1,4 +1,4 @@
-streamlit>=0.79 
+streamlit==1.10.0
 pandas 
 numpy 
 pydeck 
