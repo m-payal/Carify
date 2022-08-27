@@ -12,6 +12,7 @@ st.title("CARIFY - VEHICLE MAINTENENCE")
 st.markdown("WELCOME TO CARIFY 💥")
 st.write("          HOME")
 
+st.set_page_config(page_title="Welcome to Carify", page_icon="🐳")
 from PIL import Image
 img=Image.open('Images/toyota.jpeg')
 st.image(img, width=445)
@@ -26,6 +27,7 @@ from sklearn.naive_bayes import GaussianNB
 import math
 from socket import socket
 from pandas import DataFrame
+
 
 # --------------------------------------- KNOW information about your CAR ---------------------------------------------------
 if st.sidebar.checkbox("KNOW information about your CAR.", False):
