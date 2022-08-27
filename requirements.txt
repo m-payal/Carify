@@ -1,7 +1,7 @@
-streamlit==1.4.0
+streamlit
 pandas 
 numpy 
 pydeck 
 plotly.express
-matplotlib<=3.1
+matplotlib
 sklearn
