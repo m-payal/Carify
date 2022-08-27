@@ -6,12 +6,12 @@ import plotly.express as px
 
 import matplotlib.pyplot as plt
 DATE_TIME = "date/time"
-DATA_URL = pd.read_csv("Datasets/SIH.csv",error_bad_lines=False)
+DATA_URL = pd.read_csv("Datasets/SIH.csv",error_bad_lines=False,encoding='utf-8-sig', engine='python')
 
 str1.set_page_config(page_title="Car Comparison", page_icon="🚗")
 
-str1.subheader("COMPARE TWO CAR")
-str1.write("CAR 1")
+str1.subheader("COMPARE TWO CARS")
+str1.write("ENTER DETAILS OF CAR 1")
 selectt = str1.selectbox('Company Name', ['Hyundai','Ford','Honda','KIA'],key=4)
 if selectt =='Hyundai':
     selectt1 = str1.selectbox('Model Name', ['All New Santro', 'Creta', 'Grand i10','i20'],key=8)
@@ -26,7 +26,7 @@ selectt2 = str1.selectbox('City', ['Mumbai','Delhi','Srinagar','Shimla','Vishakh
 selectt4 = str1.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'],key=13)
 selectt3 = str1.slider("Age of the vehicle.", 0, 200)
 
-str1.write("CAR 2")
+str1.write("ENTER DETAILS OF CAR 2")
 selecttt = str1.selectbox('Company', ['Hyundai', 'Ford', 'Honda', 'KIA'],key=15)
 if selecttt == 'Hyundai':
     selecttt1 = str1.selectbox('Model Name.', ['All New Santro', 'Creta', 'Grand i10', 'i20'],key=20)
