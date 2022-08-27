@@ -12,7 +12,6 @@ st.title("CARIFY - VEHICLE MAINTENENCE")
 st.markdown("WELCOME TO CARIFY 💥")
 st.write("          HOME")
 
-st.set_page_config(page_title="Welcome to Carify", page_icon="🐳")
 from PIL import Image
 img=Image.open('Images/toyota.jpeg')
 st.image(img, width=445)
