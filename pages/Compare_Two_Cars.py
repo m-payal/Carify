@@ -12,7 +12,7 @@ str1.set_page_config(page_title="Car Comparison", page_icon="🚗")
 
 str1.subheader("COMPARE TWO CAR")
 str1.write("CAR 1")
-selectt = str1.selectbox('Company Name', ['Hyundai','Ford','Honda','KIA'],key=1)
+selectt = str1.selectbox('Company Name', ['Hyundai','Ford','Honda','KIA'],key=4)
 if selectt =='Hyundai':
     selectt1 = str1.selectbox('Model Name', ['All New Santro', 'Creta', 'Grand i10','i20'],key=1)
 if selectt == 'Ford':
@@ -27,7 +27,7 @@ selectt4 = str1.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Pet
 selectt3 = str1.slider("Age of the vehicle.", 0, 200)
 
 str1.write("CAR 2")
-selecttt = str1.selectbox('Company', ['Hyundai', 'Ford', 'Honda', 'KIA'],key=2)
+selecttt = str1.selectbox('Company', ['Hyundai', 'Ford', 'Honda', 'KIA'],key=5)
 if selecttt == 'Hyundai':
     selecttt1 = str1.selectbox('Model Name.', ['All New Santro', 'Creta', 'Grand i10', 'i20'],key=2)
 if selectt == 'Ford':
@@ -37,8 +37,8 @@ if selecttt == 'Honda':
 if selectt == 'KIA':
     selecttt1 = str1.selectbox('Model Name.', ['Carnival'],key=2)
 
-selecttt2 = str1.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapattnam'],key=2)
-selecttt4 = str1.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'],key=2)
+selecttt2 = str1.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapattnam'],key=7)
+selecttt4 = str1.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'],key=8)
 selecttt3 = str1.slider("Age of the vehicle", 0, 200)
 
 if str1.button('Compare'):
