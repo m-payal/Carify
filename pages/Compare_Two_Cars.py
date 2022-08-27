@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 DATE_TIME = "date/time"
 DATA_URL = pd.read_csv("Datasets/SIH.csv",error_bad_lines=False)
 
+st.set_page_config(page_title="Car Comparison", page_icon="🚗")
 
 st.subheader("COMPARE TWO CAR")
 st.write("CAR 1")
