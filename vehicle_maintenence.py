@@ -199,7 +199,7 @@ def compare():
     if selectt == 'KIA':
         selecttt1 = str1.selectbox('Model Name.', ['Carnival'])
 
-    selecttt2 = str1.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapattnam'])
+    selecttt2 = str1.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapattnam'],key=1)
     selecttt4 = str1.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'])
     selecttt3 = str1.slider("Age of the vehicle", 0, 200)
 
@@ -219,7 +219,8 @@ def visualize():
     height = grouped1['Total cost'].sum()
     st.write("COST vs CITY")
     plt.bar(np.arange(5), height)
-    ax.set_xticks(np.arange(5), ['Mumbai','Delhi','Srinagar','Shimla','Vishakhapattnam'])
+    ax.set_xticks(np.arange(5))
+    ax.set_xticklabels(['Mumbai','Delhi','Srinagar','Shimla','Vishakhapattnam'])
     plt.xlabel('City')
     plt.ylabel('Total cost')
     st.plotly_chart(fig)
@@ -230,7 +231,8 @@ def visualize():
     height = grouped1['Total cost'].sum()
     st.write("COST vs Company")  
     plt.bar(np.arange(4), height)
-    ax.set_xticks(np.arange(4), ['Hyundai','Ford','Honda','KIA'])
+    ax.set_xticks(np.arange(4))
+    ax.set_xticklabels(['Hyundai','Ford','Honda','KIA'])
     plt.xlabel('Company')
     plt.ylabel('Total cost')
     st.plotly_chart(fig)
