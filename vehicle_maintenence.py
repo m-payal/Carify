@@ -3,30 +3,32 @@ import pandas as pd
 import numpy as np
 import pydeck as pdk
 import plotly.express as px
+from streamlit_pages.streamlit_pages import MultiPage
 
 import matplotlib.pyplot as plt
 DATE_TIME = "date/time"
 DATA_URL = pd.read_csv("Datasets/SIH.csv",error_bad_lines=False)
 
-st.title("CARIFY - VEHICLE MAINTENENCE")
-st.markdown("WELCOME TO CARIFY 💥")
-st.write("          HOME")
+def home():
+    st.title("CARIFY - VEHICLE MAINTENENCE")
+    st.markdown("WELCOME TO CARIFY 💥")
+    st.write("          HOME")
 
-padding = 0
-st.markdown(f""" <style>
-    .reportview-container .main .block-container{{
-        padding-top: {padding}rem;
-        padding-right: {padding}rem;
-        padding-left: {padding}rem;
-        padding-bottom: {padding}rem;
-    }} </style> """, unsafe_allow_html=True)
+    padding = 0
+    st.markdown(f""" <style>
+        .reportview-container .main .block-container{{
+            padding-top: {padding}rem;
+            padding-right: {padding}rem;
+            padding-left: {padding}rem;
+            padding-bottom: {padding}rem;
+        }} </style> """, unsafe_allow_html=True)
 
-from PIL import Image
-img=Image.open('Images/toyota.jpeg')
-st.image(img, width=445)
-image = Image.open('Images/mghector.jpeg')
-st.image(image, width=445)
-##st.write(DATA_URL,width=1000,height=1000)
+    from PIL import Image
+    img=Image.open('Images/toyota.jpeg')
+    st.image(img, width=445)
+    image = Image.open('Images/mghector.jpeg')
+    st.image(image, width=445)
+    ##st.write(DATA_URL,width=1000,height=1000)
 
 import numpy as np
 import pandas as pd
@@ -175,46 +177,47 @@ if st.sidebar.checkbox("KNOW information about your CAR.", False):
         st.plotly_chart(fig)
         
  # -------------------------------- COMPARISON ----------------------------------------------------------
-if st.sidebar.checkbox("COMPARE TWO CARS?", False):
-    st.subheader("COMPARE TWO CAR")
-    st.write("CAR 1")
-    selectt = st.selectbox('Company Name', ['Hyundai','Ford','Honda','KIA'],key=1)
-    if selectt =='Hyundai':
-        selectt1 = st.selectbox('Model Name', ['All New Santro', 'Creta', 'Grand i10','i20'],key=1)
-    if selectt == 'Ford':
-        selectt1 = st.selectbox('Model Name', ['Ecosports', 'Figo',],key=1)
-    if selectt == 'Honda':
-        selectt1 = st.selectbox('Model Name', ['Amaze', 'City(2014)', 'WR-V'],key=1)
-    if selectt == 'KIA':
-        selectt1 = st.selectbox('Model Name', ['Carnival'],key=1)
+def compare():
+    if st.sidebar.checkbox("COMPARE TWO CARS?", False):
+        st.subheader("COMPARE TWO CAR")
+        st.write("CAR 1")
+        selectt = st.selectbox('Company Name', ['Hyundai','Ford','Honda','KIA'],key=1)
+        if selectt =='Hyundai':
+            selectt1 = st.selectbox('Model Name', ['All New Santro', 'Creta', 'Grand i10','i20'],key=1)
+        if selectt == 'Ford':
+            selectt1 = st.selectbox('Model Name', ['Ecosports', 'Figo',],key=1)
+        if selectt == 'Honda':
+            selectt1 = st.selectbox('Model Name', ['Amaze', 'City(2014)', 'WR-V'],key=1)
+        if selectt == 'KIA':
+            selectt1 = st.selectbox('Model Name', ['Carnival'],key=1)
 
-    selectt2 = st.selectbox('City', ['Mumbai','Delhi','Srinagar','Shimla','Vishakhapattnam'],key=1)
-    selectt4 = st.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'],key=1)
-    selectt3 = st.slider("Age of the vehicle.", 0, 200)
+        selectt2 = st.selectbox('City', ['Mumbai','Delhi','Srinagar','Shimla','Vishakhapattnam'],key=1)
+        selectt4 = st.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'],key=1)
+        selectt3 = st.slider("Age of the vehicle.", 0, 200)
 
-    st.write("CAR 2")
-    selecttt = st.selectbox('Company', ['Hyundai', 'Ford', 'Honda', 'KIA'],key=2)
-    if selecttt == 'Hyundai':
-        selecttt1 = st.selectbox('Model Name.', ['All New Santro', 'Creta', 'Grand i10', 'i20'],key=2)
-    if selectt == 'Ford':
-        selecttt1 = st.selectbox('Model Name.', ['Ecosports', 'Figo', ],key=2)
-    if selecttt == 'Honda':
-        selecttt1 = st.selectbox('Model Name.', ['Amaze', 'City(2014)', 'WR-V'],key=2)
-    if selectt == 'KIA':
-        selecttt1 = st.selectbox('Model Name.', ['Carnival'],key=2)
+        st.write("CAR 2")
+        selecttt = st.selectbox('Company', ['Hyundai', 'Ford', 'Honda', 'KIA'],key=2)
+        if selecttt == 'Hyundai':
+            selecttt1 = st.selectbox('Model Name.', ['All New Santro', 'Creta', 'Grand i10', 'i20'],key=2)
+        if selectt == 'Ford':
+            selecttt1 = st.selectbox('Model Name.', ['Ecosports', 'Figo', ],key=2)
+        if selecttt == 'Honda':
+            selecttt1 = st.selectbox('Model Name.', ['Amaze', 'City(2014)', 'WR-V'],key=2)
+        if selectt == 'KIA':
+            selecttt1 = st.selectbox('Model Name.', ['Carnival'],key=2)
 
-    selecttt2 = st.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapattnam'],key=2)
-    selecttt4 = st.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'],key=2)
-    selecttt3 = st.slider("Age of the vehicle", 0, 200)
+        selecttt2 = st.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapattnam'],key=2)
+        selecttt4 = st.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'],key=2)
+        selecttt3 = st.slider("Age of the vehicle", 0, 200)
 
-    if st.button('Compare'):
-        st.write("Comparing.....")
-        grouped = DATA_URL.groupby(['Company', 'Model', 'Fuel', 'City'])
-        g = grouped.get_group((selectt, selectt1, selectt4, selectt2))
-        st.write(g)
-        
-        g1 = grouped.get_group((selecttt, selecttt1, selecttt4, selecttt2))
-        st.write(g1)
+        if st.button('Compare'):
+            st.write("Comparing.....")
+            grouped = DATA_URL.groupby(['Company', 'Model', 'Fuel', 'City'])
+            g = grouped.get_group((selectt, selectt1, selectt4, selectt2))
+            st.write(g)
+
+            g1 = grouped.get_group((selecttt, selecttt1, selecttt4, selecttt2))
+            st.write(g1)
  # ------------------------------- VISUALISATION -----------------------------------------------------------
 if st.sidebar.checkbox("VISUALIZATION", False):
 
@@ -243,15 +246,22 @@ if st.sidebar.checkbox("VISUALIZATION", False):
     st.plotly_chart(fig)
 
  # ------------------------------- ABOUT US -----------------------------------------------------------
-
-if st.sidebar.checkbox("ABOUT US", False):
-    st.subheader("ABOUT CARIFY")
-    st.write("In Today’s world with so many cars, models in the market, it is hard to find out which car has a high maintenance cost/index that is authentic source.While buying a car we spend a lot of time different features and also maintenance. But there's no platform which tells us the maintenance cost that we'll have to pay after buying the car. A system that shows the health and Maintenance Index of various components of car models or car parts based on multiple factors is needed. We have created this platform for all these problems")
-    st.write("In our system we show the health and maintenance Index of various components of car models or car parts based on multiple factors.Also the probablity of replacement of a particular car component after the car is bought. We can also compare two different car models based on maintenence.This will help new buyers to understand the maintenance costs of a certain model and probability of which car part requires more often servicing /change, OEM’s to understand which part is requiring frequent change so they can improve that component and needs to be recalled and made better in the new models ")
-    st.subheader('"Know your car\'s life before you buy it!"')
-    st.text("\n")
-    st.text("\n")
-    st.text("\n")
-    st.text("\n")
-    st.text("\n")
-    st.text(" \n BY TEAM \n Akshata Jedhe \n Juee Ashtaputre \n Payal Mehta \n Riya Kulkarni \n Shreya Pawaskar")
+def about():
+    if st.sidebar.checkbox("ABOUT US", False):
+        st.subheader("ABOUT CARIFY")
+        st.write("In Today’s world with so many cars, models in the market, it is hard to find out which car has a high maintenance cost/index that is authentic source.While buying a car we spend a lot of time different features and also maintenance. But there's no platform which tells us the maintenance cost that we'll have to pay after buying the car. A system that shows the health and Maintenance Index of various components of car models or car parts based on multiple factors is needed. We have created this platform for all these problems")
+        st.write("In our system we show the health and maintenance Index of various components of car models or car parts based on multiple factors.Also the probablity of replacement of a particular car component after the car is bought. We can also compare two different car models based on maintenence.This will help new buyers to understand the maintenance costs of a certain model and probability of which car part requires more often servicing /change, OEM’s to understand which part is requiring frequent change so they can improve that component and needs to be recalled and made better in the new models ")
+        st.subheader('"Know your car\'s life before you buy it!"')
+        st.text("\n")
+        st.text("\n")
+        st.text("\n")
+        st.text("\n")
+        st.text("\n")
+        st.text(" \n BY TEAM \n Akshata Jedhe \n Juee Ashtaputre \n Payal Mehta \n Riya Kulkarni \n Shreya Pawaskar")
+    
+app = MultiPage()
+# Add pages
+app.add_page("Home",home)
+app.add_page("About",about)
+app.add_page("Compare",compare)
+app.run()
