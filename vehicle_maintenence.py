@@ -165,45 +165,47 @@ def know():
  # -------------------------------- COMPARISON ----------------------------------------------------------
 def compare():
 
-    st1.subheader("COMPARE TWO CARS")
-    st1.write("ENTER DETAILS OF CAR 1")
-    selectt = st1.selectbox('Company Name', ['Hyundai','Ford','Honda','KIA'])
+    import streamlit as st
+    
+    st.subheader("COMPARE TWO CARS")
+    st.write("ENTER DETAILS OF CAR 1")
+    selectt = st.selectbox('Company Name', ['Hyundai','Ford','Honda','KIA'])
     if selectt =='Hyundai':
-        selectt1 = st1.selectbox('Model Name', ['All New Santro', 'Creta', 'Grand i10','i20'])
+        selectt1 = st.selectbox('Model Name', ['All New Santro', 'Creta', 'Grand i10','i20'])
     if selectt == 'Ford':
-        selectt1 = st1.selectbox('Model Name', ['Ecosports', 'Figo',])
+        selectt1 = st.selectbox('Model Name', ['Ecosports', 'Figo',])
     if selectt == 'Honda':
-        selectt1 = st1.selectbox('Model Name', ['Amaze', 'City(2014)', 'WR-V'])
+        selectt1 = st.selectbox('Model Name', ['Amaze', 'City(2014)', 'WR-V'])
     if selectt == 'KIA':
-        selectt1 = st1.selectbox('Model Name', ['Carnival'])
+        selectt1 = st.selectbox('Model Name', ['Carnival'])
 
-    selectt2 = st1.selectbox('City', ['Mumbai','Delhi','Srinagar','Shimla','Vishakhapattnam'],key=16)
-    selectt4 = st1.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'])
-    selectt3 = st1.slider("Age of the vehicle.", 0, 200)
+    selectt2 = st.selectbox('City', ['Mumbai','Delhi','Srinagar','Shimla','Vishakhapattnam'],key=16)
+    selectt4 = st.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'])
+    selectt3 = st.slider("Age of the vehicle.", 0, 200)
 
-    st1.write("ENTER DETAILS OF CAR 2")
-    selecttt = st1.selectbox('Company', ['Hyundai', 'Ford', 'Honda', 'KIA'])
+    st.write("ENTER DETAILS OF CAR 2")
+    selecttt = st.selectbox('Company', ['Hyundai', 'Ford', 'Honda', 'KIA'])
     if selecttt == 'Hyundai':
-        selecttt1 = st1.selectbox('Model Name.', ['All New Santro', 'Creta', 'Grand i10', 'i20'])
+        selecttt1 = st.selectbox('Model Name.', ['All New Santro', 'Creta', 'Grand i10', 'i20'])
     if selectt == 'Ford':
-        selecttt1 = st1.selectbox('Model Name.', ['Ecosports', 'Figo', ])
+        selecttt1 = st.selectbox('Model Name.', ['Ecosports', 'Figo', ])
     if selecttt == 'Honda':
-        selecttt1 = st1.selectbox('Model Name.', ['Amaze', 'City(2014)', 'WR-V'])
+        selecttt1 = st.selectbox('Model Name.', ['Amaze', 'City(2014)', 'WR-V'])
     if selectt == 'KIA':
-        selecttt1 = st1.selectbox('Model Name.', ['Carnival'])
+        selecttt1 = st.selectbox('Model Name.', ['Carnival'])
 
-    sel2 = st1.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapattnam'],key=17)
-    sel4 = st1.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'])
-    sel3 = st1.slider("Age of the vehicle", 0, 200)
+    sel2 = st.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapattnam'],key=17)
+    sel4 = st.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'])
+    sel3 = st.slider("Age of the vehicle", 0, 200)
 
-    if st1.button('Compare'):
-        st1.write("Comparing in progress!")
+    if st.button('Compare'):
+        st.write("Comparing in progress!")
         grouped = DATA_URL.groupby(['Company', 'Model', 'Fuel', 'City'])
         g = grouped.get_group((selectt, selectt1, selectt4, selectt2))
-        st1.write(g)
+        st.write(g)
 
         g1 = grouped.get_group((selecttt, selecttt1, sel4, sel2))
-        st1.write(g1)
+        st.write(g1)
  
 
 
