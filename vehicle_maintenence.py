@@ -178,49 +178,50 @@ def know():
         
  # -------------------------------- COMPARISON ----------------------------------------------------------
 def compare():
-    st.subheader("COMPARE TWO CAR")
-    st.write("CAR 1")
-    selectt = st.selectbox('Company Name', ['Hyundai','Ford','Honda','KIA'],key=1)
+
+    import streamlit as str1
+    
+    str1.subheader("COMPARE TWO CARS")
+    str1.write("ENTER DETAILS OF CAR 1")
+    selectt = str1.selectbox('Company Name', ['Hyundai','Ford','Honda','KIA'],key=4)
     if selectt =='Hyundai':
-        selectt1 = st.selectbox('Model Name', ['All New Santro', 'Creta', 'Grand i10','i20'],key=1)
+        selectt1 = str1.selectbox('Model Name', ['All New Santro', 'Creta', 'Grand i10','i20'],key=8)
     if selectt == 'Ford':
-        selectt1 = st.selectbox('Model Name', ['Ecosports', 'Figo',],key=1)
+        selectt1 = str1.selectbox('Model Name', ['Ecosports', 'Figo',],key=12)
     if selectt == 'Honda':
-        selectt1 = st.selectbox('Model Name', ['Amaze', 'City(2014)', 'WR-V'],key=1)
+        selectt1 = str1.selectbox('Model Name', ['Amaze', 'City(2014)', 'WR-V'],key=16)
     if selectt == 'KIA':
-        selectt1 = st.selectbox('Model Name', ['Carnival'],key=1)
+        selectt1 = str1.selectbox('Model Name', ['Carnival'],key=20)
 
-    selectt2 = st.selectbox('City', ['Mumbai','Delhi','Srinagar','Shimla','Vishakhapattnam'],key=1)
-    selectt4 = st.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'],key=1)
-    selectt3 = st.slider("Age of the vehicle.", 0, 200)
+    selectt2 = str1.selectbox('City', ['Mumbai','Delhi','Srinagar','Shimla','Vishakhapattnam'],key=11)
+    selectt4 = str1.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'],key=13)
+    selectt3 = str1.slider("Age of the vehicle.", 0, 200)
 
-    st.write("CAR 2")
-    selecttt = st.selectbox('Company', ['Hyundai', 'Ford', 'Honda', 'KIA'],key=2)
+    str1.write("ENTER DETAILS OF CAR 2")
+    selecttt = str1.selectbox('Company', ['Hyundai', 'Ford', 'Honda', 'KIA'],key=15)
     if selecttt == 'Hyundai':
-        selecttt1 = st.selectbox('Model Name.', ['All New Santro', 'Creta', 'Grand i10', 'i20'],key=2)
+        selecttt1 = str1.selectbox('Model Name.', ['All New Santro', 'Creta', 'Grand i10', 'i20'],key=20)
     if selectt == 'Ford':
-        selecttt1 = st.selectbox('Model Name.', ['Ecosports', 'Figo', ],key=2)
+        selecttt1 = str1.selectbox('Model Name.', ['Ecosports', 'Figo', ],key=21)
     if selecttt == 'Honda':
-        selecttt1 = st.selectbox('Model Name.', ['Amaze', 'City(2014)', 'WR-V'],key=2)
+        selecttt1 = str1.selectbox('Model Name.', ['Amaze', 'City(2014)', 'WR-V'],key=22)
     if selectt == 'KIA':
-        selecttt1 = st.selectbox('Model Name.', ['Carnival'],key=2)
+        selecttt1 = str1.selectbox('Model Name.', ['Carnival'],key=23)
 
-    selecttt2 = st.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapattnam'],key=2)
-    selecttt4 = st.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'],key=2)
-    selecttt3 = st.slider("Age of the vehicle", 0, 200)
+    selecttt2 = str1.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapattnam'],key=17)
+    selecttt4 = str1.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'],key=18)
+    selecttt3 = str1.slider("Age of the vehicle", 0, 200)
 
-    if st.button('Compare'):
-        st.write("Comparing.....")
+    if str1.button('Compare'):
+        str1.write("Comparing.....")
         grouped = DATA_URL.groupby(['Company', 'Model', 'Fuel', 'City'])
         g = grouped.get_group((selectt, selectt1, selectt4, selectt2))
-        st.write(g)
+        str1.write(g)
 
         g1 = grouped.get_group((selecttt, selecttt1, selecttt4, selecttt2))
-        st.write(g1)
+        str1.write(g1)
  # ------------------------------- VISUALISATION -----------------------------------------------------------
 def visualize():
-    import matplotlib.pyplot as plt
-
     fig, ax = plt.subplots()
     df=DATA_URL
     grouped1=df.groupby(['City'])
@@ -245,7 +246,6 @@ def visualize():
 
  # ------------------------------- ABOUT US -----------------------------------------------------------
 def about():
-    st.sidebar.header("ABOUT US")
     st.subheader("ABOUT CARIFY")
     st.write("In Today’s world with so many cars, models in the market, it is hard to find out which car has a high maintenance cost/index that is authentic source.While buying a car we spend a lot of time different features and also maintenance. But there's no platform which tells us the maintenance cost that we'll have to pay after buying the car. A system that shows the health and Maintenance Index of various components of car models or car parts based on multiple factors is needed. We have created this platform for all these problems")
     st.write("In our system we show the health and maintenance Index of various components of car models or car parts based on multiple factors.Also the probablity of replacement of a particular car component after the car is bought. We can also compare two different car models based on maintenence.This will help new buyers to understand the maintenance costs of a certain model and probability of which car part requires more often servicing /change, OEM’s to understand which part is requiring frequent change so they can improve that component and needs to be recalled and made better in the new models ")
