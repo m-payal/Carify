@@ -199,7 +199,7 @@ def compare():
     if selectt == 'KIA':
         selecttt1 = str1.selectbox('Model Name.', ['Carnival'])
 
-    sel2 = str1.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapattnam'])
+    sel2 = str1.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapattnam'],key=1)
     sel4 = str1.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'])
     sel3 = str1.slider("Age of the vehicle", 0, 200)
 
