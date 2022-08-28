@@ -32,10 +32,10 @@ def home():
         }} </style> """, unsafe_allow_html=True)
 
     from PIL import Image
-    st.write(" \n Why to use Carify ?")
-    st.write(" \n Based on 3 C's : Collect , Calculate and Compare . \n It collects data from authentic source, calculates the maintenance cost of vehicle based on certain factors and then compares it with other vehicles. \n Compares data city-wise. \n Saves the time of the user browsing information and comparing them on various platforms. \n Shows the probability of specific components being changed.")
-    st.write(" \n How Carify benefits everone? \n ")
-    st.write(" \n Consumers : Enable to take a decision to buy a car based on the maintenance index. This enables the customer to select the car models according to the patterns and usage in zones, states, Cities, taluka. Further drilling down with respect to aging of vehicle, usage patterns and mileage \n Car Manufacturers : With the available data, OEM will be enable to design parts for more robustness. This will reduce warranty and service cost. Companies can analyze the performance of their models with respect to their competitors in a particular region.  \n Government : Enable govt for drafting the policies and approvals for new model launch in market. \n Second-hand Car Buyers : Customer will be able to take decision to buy the most suitable cars available for sale \n ")
+    st.write(" Why to use Carify?")
+    st.text(" \n Based on 3 C's : Collect , Calculate and Compare . \n It collects data from authentic source, calculates the maintenance cost of vehicle based on certain factors and then compares it with other vehicles. \n Compares data city-wise. \n Saves the time of the user browsing information and comparing them on various platforms. \n Shows the probability of specific components being changed.")
+    st.write("How Carify benefits everone?")
+    st.text(" \n Consumers : Enable to take a decision to buy a car based on the maintenance index. This enables the customer to select the car models according to the patterns and usage in zones, states, Cities, taluka. Further drilling down with respect to aging of vehicle, usage patterns and mileage \n Car Manufacturers : With the available data, OEM will be enable to design parts for more robustness. This will reduce warranty and service cost. Companies can analyze the performance of their models with respect to their competitors in a particular region.  \n Government : Enable govt for drafting the policies and approvals for new model launch in market. \n Second-hand Car Buyers : Customer will be able to take decision to buy the most suitable cars available for sale \n ")
     img=Image.open('Images/toyota.jpeg')
     st.image(img, width=445)
     image = Image.open('Images/mghector.jpeg')
