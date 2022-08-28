@@ -191,25 +191,25 @@ def compare():
     str1.write("ENTER DETAILS OF CAR 2")
     selecttt = str1.selectbox('Company', ['Hyundai', 'Ford', 'Honda', 'KIA'])
     if selecttt == 'Hyundai':
-        selecttt1 = str1.selectbox('Model Name.', ['All New Santro', 'Creta', 'Grand i10', 'i20'],key=1)
+        selecttt1 = str1.selectbox('Model Name.', ['All New Santro', 'Creta', 'Grand i10', 'i20'])
     if selectt == 'Ford':
-        selecttt1 = str1.selectbox('Model Name.', ['Ecosports', 'Figo', ],key=2)
+        selecttt1 = str1.selectbox('Model Name.', ['Ecosports', 'Figo', ])
     if selecttt == 'Honda':
-        selecttt1 = str1.selectbox('Model Name.', ['Amaze', 'City(2014)', 'WR-V'],key=3)
+        selecttt1 = str1.selectbox('Model Name.', ['Amaze', 'City(2014)', 'WR-V'])
     if selectt == 'KIA':
-        selecttt1 = str1.selectbox('Model Name.', ['Carnival'],key=4)
+        selecttt1 = str1.selectbox('Model Name.', ['Carnival'])
 
-    selecttt2 = str1.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapattnam'])
-    selecttt4 = str1.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'])
-    selecttt3 = str1.slider("Age of the vehicle", 0, 200)
+    sel2 = str1.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapattnam'])
+    sel4 = str1.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'])
+    sel3 = str1.slider("Age of the vehicle", 0, 200)
 
     if str1.button('Compare'):
-        str1.write("Comparing.....")
+        str1.write("Comparing in progress!")
         grouped = DATA_URL.groupby(['Company', 'Model', 'Fuel', 'City'])
         g = grouped.get_group((selectt, selectt1, selectt4, selectt2))
         str1.write(g)
 
-        g1 = grouped.get_group((selecttt, selecttt1, selecttt4, selecttt2))
+        g1 = grouped.get_group((selecttt, selecttt1, sel4, sel2))
         str1.write(g1)
  
 
