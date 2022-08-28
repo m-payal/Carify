@@ -191,15 +191,15 @@ def compare():
     str1.write("ENTER DETAILS OF CAR 2")
     selecttt = str1.selectbox('Company', ['Hyundai', 'Ford', 'Honda', 'KIA'])
     if selecttt == 'Hyundai':
-        selecttt1 = str1.selectbox('Model Name.', ['All New Santro', 'Creta', 'Grand i10', 'i20'])
+        selecttt1 = str1.selectbox('Model Name.', ['All New Santro', 'Creta', 'Grand i10', 'i20'],key=1)
     if selectt == 'Ford':
-        selecttt1 = str1.selectbox('Model Name.', ['Ecosports', 'Figo', ])
+        selecttt1 = str1.selectbox('Model Name.', ['Ecosports', 'Figo', ],key=2)
     if selecttt == 'Honda':
-        selecttt1 = str1.selectbox('Model Name.', ['Amaze', 'City(2014)', 'WR-V'])
+        selecttt1 = str1.selectbox('Model Name.', ['Amaze', 'City(2014)', 'WR-V'],key=3)
     if selectt == 'KIA':
-        selecttt1 = str1.selectbox('Model Name.', ['Carnival'])
+        selecttt1 = str1.selectbox('Model Name.', ['Carnival'],key=4)
 
-    selecttt2 = str1.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapattnam'],key=1)
+    selecttt2 = str1.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapattnam'])
     selecttt4 = str1.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'])
     selecttt3 = str1.slider("Age of the vehicle", 0, 200)
 
@@ -211,7 +211,10 @@ def compare():
 
         g1 = grouped.get_group((selecttt, selecttt1, selecttt4, selecttt2))
         str1.write(g1)
- # ------------------------------- VISUALISATION -----------------------------------------------------------
+ 
+
+
+# ------------------------------- VISUALISATION -----------------------------------------------------------
 def visualize():
     fig, ax = plt.subplots()
     df=DATA_URL
