@@ -260,8 +260,8 @@ def about():
 app = MultiPage()
 # Add pages
 app.add_page("Home",home)
-app.add_page("About",about)
+app.add_page("About Carify",about)
 app.add_page("Know more about your Car",know)
-app.add_page("Compare",compare)
-app.add_page("Visualise",visualize)
+app.add_page("Compare Two Cars",compare)
+app.add_page("Visualise Data",visualize)
 app.run()
