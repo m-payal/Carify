@@ -6,14 +6,21 @@ import plotly.express as px
 from streamlit_pages.streamlit_pages import MultiPage
 import scipy.stats
 import matplotlib.pyplot as plt
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.naive_bayes import GaussianNB
+from sklearn.metrics import accuracy_score
+from sklearn.model_selection import train_test_split
+import math
+from socket import socket
+from pandas import DataFrame
 
 DATE_TIME = "date/time"
 DATA_URL = pd.read_csv("Datasets/SIH.csv",error_bad_lines=False)
 
 def home():
-    st.title("CARIFY - VEHICLE MAINTENENCE")
+    st.title("CARIFY")
     st.markdown("WELCOME TO CARIFY 💥")
-    st.write("          HOME")
+    st.write("HOME")
 
     padding = 0
     st.markdown(f""" <style>
@@ -25,19 +32,12 @@ def home():
         }} </style> """, unsafe_allow_html=True)
 
     from PIL import Image
+    st.write("HOME")
     img=Image.open('Images/toyota.jpeg')
     st.image(img, width=445)
     image = Image.open('Images/mghector.jpeg')
     st.image(image, width=445)
     ##st.write(DATA_URL,width=1000,height=1000)
-
-import numpy as np
-import pandas as pd
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.naive_bayes import GaussianNB
-import math
-from socket import socket
-from pandas import DataFrame
 
 
 # --------------------------------------- KNOW information about your CAR ---------------------------------------------------
@@ -89,14 +89,6 @@ def know():
         else:
             st.write("Probability of getting Air cleaner filter changed")
             st.write(100, "%")
-
-
-
-        from sklearn.metrics import accuracy_score
-        from sklearn.tree import DecisionTreeClassifier
-        from sklearn.naive_bayes import GaussianNB
-        from sklearn.model_selection import train_test_split
-        import math
     #-----------------------------------------------------------------------------------
         df=g
 
@@ -165,9 +157,7 @@ def know():
         predictions3 = [np.round(value) for value in y1_predict]
         accuracy = accuracy_score(y1_test, predictions3)
         st.write("Part cost Accuracy: %.2f%%" % (accuracy * 100.0))
-
-        #------------------------------------------------------------------------------------------
-        import matplotlib.pyplot as plt
+        
         fig = plt.figure()
         left=df["Mileage"]
         height=df["Total cost"]
@@ -192,25 +182,25 @@ def compare():
     if selectt == 'Honda':
         selectt1 = str1.selectbox('Model Name', ['Amaze', 'City(2014)', 'WR-V'])
     if selectt == 'KIA':
-        selectt1 = str1.selectbox('Model Name', ['Carnival'],key=20)
+        selectt1 = str1.selectbox('Model Name', ['Carnival'])
 
-    selectt2 = str1.selectbox('City', ['Mumbai','Delhi','Srinagar','Shimla','Vishakhapattnam'],key=11)
-    selectt4 = str1.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'],key=13)
+    selectt2 = str1.selectbox('City', ['Mumbai','Delhi','Srinagar','Shimla','Vishakhapattnam'])
+    selectt4 = str1.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'])
     selectt3 = str1.slider("Age of the vehicle.", 0, 200)
 
     str1.write("ENTER DETAILS OF CAR 2")
-    selecttt = str1.selectbox('Company', ['Hyundai', 'Ford', 'Honda', 'KIA'],key=15)
+    selecttt = str1.selectbox('Company', ['Hyundai', 'Ford', 'Honda', 'KIA'])
     if selecttt == 'Hyundai':
-        selecttt1 = str1.selectbox('Model Name.', ['All New Santro', 'Creta', 'Grand i10', 'i20'],key=20)
+        selecttt1 = str1.selectbox('Model Name.', ['All New Santro', 'Creta', 'Grand i10', 'i20'])
     if selectt == 'Ford':
-        selecttt1 = str1.selectbox('Model Name.', ['Ecosports', 'Figo', ],key=21)
+        selecttt1 = str1.selectbox('Model Name.', ['Ecosports', 'Figo', ])
     if selecttt == 'Honda':
-        selecttt1 = str1.selectbox('Model Name.', ['Amaze', 'City(2014)', 'WR-V'],key=22)
+        selecttt1 = str1.selectbox('Model Name.', ['Amaze', 'City(2014)', 'WR-V'])
     if selectt == 'KIA':
-        selecttt1 = str1.selectbox('Model Name.', ['Carnival'],key=23)
+        selecttt1 = str1.selectbox('Model Name.', ['Carnival'])
 
-    selecttt2 = str1.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapattnam'],key=17)
-    selecttt4 = str1.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'],key=18)
+    selecttt2 = str1.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapattnam'])
+    selecttt4 = str1.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'])
     selecttt3 = str1.slider("Age of the vehicle", 0, 200)
 
     if str1.button('Compare'):
