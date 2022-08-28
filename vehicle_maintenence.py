@@ -32,7 +32,8 @@ def home():
         }} </style> """, unsafe_allow_html=True)
 
     from PIL import Image
-    st.write("HOME")
+    st.write("Why to use Carify ?")
+    st.write("\n Based on 3 C's : Collect , Calculate and Compare . \n It collects data from authentic source, calculates the maintenance cost of vehicle based on certain factors and then compares it with other vehicles. \n Compares data city-wise. \n Saves the time of the user browsing information and comparing them on various platforms. \n Shows the probability of specific components being changed.")
     img=Image.open('Images/toyota.jpeg')
     st.image(img, width=445)
     image = Image.open('Images/mghector.jpeg')
