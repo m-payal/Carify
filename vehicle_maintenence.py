@@ -40,21 +40,21 @@ from pandas import DataFrame
 
 
 # --------------------------------------- KNOW information about your CAR ---------------------------------------------------
-if st.sidebar.checkbox("KNOW information about your CAR.", False):
-    st.sidebar.subheader("INFORMATION ABOUT YOUR CAR")
-    select = st.sidebar.selectbox('Company', ['Hyundai','Ford','Honda','KIA'])
+def know():
+    st.subheader("INFORMATION ABOUT YOUR CAR")
+    select = st.selectbox('Company', ['Hyundai','Ford','Honda','KIA'])
     if select =='Hyundai':
-        select1 = st.sidebar.selectbox('Model', ['All New Santro', 'Creta', 'Grand i10','i20'])
+        select1 = st.selectbox('Model', ['All New Santro', 'Creta', 'Grand i10','i20'])
     if select == 'Ford':
-        select1 = st.sidebar.selectbox('Model', ['Ecosports', 'Figo',])
+        select1 = st.selectbox('Model', ['Ecosports', 'Figo',])
     if select == 'Honda':
-        select1 = st.sidebar.selectbox('Model', ['Amaze', 'City(2014)', 'WR-V'])
+        select1 = st.selectbox('Model', ['Amaze', 'City(2014)', 'WR-V'])
     if select == 'KIA':
-        select1 = st.sidebar.selectbox('Model', ['Carnival'])
+        select1 = st.selectbox('Model', ['Carnival'])
 
-    select2 = st.sidebar.selectbox('City', ['Mumbai','Delhi','Srinagar','Shimla','Vishakhapattnam'])
-    select4 = st.sidebar.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'])
-    select3 = st.sidebar.text_input('Enter Age of Vehicle here:')
+    select2 = st.selectbox('City', ['Mumbai','Delhi','Srinagar','Shimla','Vishakhapattnam'])
+    select4 = st.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'])
+    select3 = st.text_input('Enter Age of Vehicle here:')
     st.write("Check show data to get the information.")
 
     # ----------------------------------- PROBABILITY ------------------------------------------------
@@ -178,49 +178,47 @@ if st.sidebar.checkbox("KNOW information about your CAR.", False):
         
  # -------------------------------- COMPARISON ----------------------------------------------------------
 def compare():
-    if st.sidebar.checkbox("COMPARE TWO CARS?", False):
-        st.subheader("COMPARE TWO CAR")
-        st.write("CAR 1")
-        selectt = st.selectbox('Company Name', ['Hyundai','Ford','Honda','KIA'],key=1)
-        if selectt =='Hyundai':
-            selectt1 = st.selectbox('Model Name', ['All New Santro', 'Creta', 'Grand i10','i20'],key=1)
-        if selectt == 'Ford':
-            selectt1 = st.selectbox('Model Name', ['Ecosports', 'Figo',],key=1)
-        if selectt == 'Honda':
-            selectt1 = st.selectbox('Model Name', ['Amaze', 'City(2014)', 'WR-V'],key=1)
-        if selectt == 'KIA':
-            selectt1 = st.selectbox('Model Name', ['Carnival'],key=1)
+    st.subheader("COMPARE TWO CAR")
+    st.write("CAR 1")
+    selectt = st.selectbox('Company Name', ['Hyundai','Ford','Honda','KIA'],key=1)
+    if selectt =='Hyundai':
+        selectt1 = st.selectbox('Model Name', ['All New Santro', 'Creta', 'Grand i10','i20'],key=1)
+    if selectt == 'Ford':
+        selectt1 = st.selectbox('Model Name', ['Ecosports', 'Figo',],key=1)
+    if selectt == 'Honda':
+        selectt1 = st.selectbox('Model Name', ['Amaze', 'City(2014)', 'WR-V'],key=1)
+    if selectt == 'KIA':
+        selectt1 = st.selectbox('Model Name', ['Carnival'],key=1)
 
-        selectt2 = st.selectbox('City', ['Mumbai','Delhi','Srinagar','Shimla','Vishakhapattnam'],key=1)
-        selectt4 = st.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'],key=1)
-        selectt3 = st.slider("Age of the vehicle.", 0, 200)
+    selectt2 = st.selectbox('City', ['Mumbai','Delhi','Srinagar','Shimla','Vishakhapattnam'],key=1)
+    selectt4 = st.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'],key=1)
+    selectt3 = st.slider("Age of the vehicle.", 0, 200)
 
-        st.write("CAR 2")
-        selecttt = st.selectbox('Company', ['Hyundai', 'Ford', 'Honda', 'KIA'],key=2)
-        if selecttt == 'Hyundai':
-            selecttt1 = st.selectbox('Model Name.', ['All New Santro', 'Creta', 'Grand i10', 'i20'],key=2)
-        if selectt == 'Ford':
-            selecttt1 = st.selectbox('Model Name.', ['Ecosports', 'Figo', ],key=2)
-        if selecttt == 'Honda':
-            selecttt1 = st.selectbox('Model Name.', ['Amaze', 'City(2014)', 'WR-V'],key=2)
-        if selectt == 'KIA':
-            selecttt1 = st.selectbox('Model Name.', ['Carnival'],key=2)
+    st.write("CAR 2")
+    selecttt = st.selectbox('Company', ['Hyundai', 'Ford', 'Honda', 'KIA'],key=2)
+    if selecttt == 'Hyundai':
+        selecttt1 = st.selectbox('Model Name.', ['All New Santro', 'Creta', 'Grand i10', 'i20'],key=2)
+    if selectt == 'Ford':
+        selecttt1 = st.selectbox('Model Name.', ['Ecosports', 'Figo', ],key=2)
+    if selecttt == 'Honda':
+        selecttt1 = st.selectbox('Model Name.', ['Amaze', 'City(2014)', 'WR-V'],key=2)
+    if selectt == 'KIA':
+        selecttt1 = st.selectbox('Model Name.', ['Carnival'],key=2)
 
-        selecttt2 = st.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapattnam'],key=2)
-        selecttt4 = st.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'],key=2)
-        selecttt3 = st.slider("Age of the vehicle", 0, 200)
+    selecttt2 = st.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapattnam'],key=2)
+    selecttt4 = st.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'],key=2)
+    selecttt3 = st.slider("Age of the vehicle", 0, 200)
 
-        if st.button('Compare'):
-            st.write("Comparing.....")
-            grouped = DATA_URL.groupby(['Company', 'Model', 'Fuel', 'City'])
-            g = grouped.get_group((selectt, selectt1, selectt4, selectt2))
-            st.write(g)
+    if st.button('Compare'):
+        st.write("Comparing.....")
+        grouped = DATA_URL.groupby(['Company', 'Model', 'Fuel', 'City'])
+        g = grouped.get_group((selectt, selectt1, selectt4, selectt2))
+        st.write(g)
 
-            g1 = grouped.get_group((selecttt, selecttt1, selecttt4, selecttt2))
-            st.write(g1)
+        g1 = grouped.get_group((selecttt, selecttt1, selecttt4, selecttt2))
+        st.write(g1)
  # ------------------------------- VISUALISATION -----------------------------------------------------------
-if st.sidebar.checkbox("VISUALIZATION", False):
-
+def visualize():
     import matplotlib.pyplot as plt
 
     fig, ax = plt.subplots()
@@ -247,21 +245,23 @@ if st.sidebar.checkbox("VISUALIZATION", False):
 
  # ------------------------------- ABOUT US -----------------------------------------------------------
 def about():
-    if st.sidebar.checkbox("ABOUT US", False):
-        st.subheader("ABOUT CARIFY")
-        st.write("In Today’s world with so many cars, models in the market, it is hard to find out which car has a high maintenance cost/index that is authentic source.While buying a car we spend a lot of time different features and also maintenance. But there's no platform which tells us the maintenance cost that we'll have to pay after buying the car. A system that shows the health and Maintenance Index of various components of car models or car parts based on multiple factors is needed. We have created this platform for all these problems")
-        st.write("In our system we show the health and maintenance Index of various components of car models or car parts based on multiple factors.Also the probablity of replacement of a particular car component after the car is bought. We can also compare two different car models based on maintenence.This will help new buyers to understand the maintenance costs of a certain model and probability of which car part requires more often servicing /change, OEM’s to understand which part is requiring frequent change so they can improve that component and needs to be recalled and made better in the new models ")
-        st.subheader('"Know your car\'s life before you buy it!"')
-        st.text("\n")
-        st.text("\n")
-        st.text("\n")
-        st.text("\n")
-        st.text("\n")
-        st.text(" \n BY TEAM \n Akshata Jedhe \n Juee Ashtaputre \n Payal Mehta \n Riya Kulkarni \n Shreya Pawaskar")
+
+    st.subheader("ABOUT CARIFY")
+    st.write("In Today’s world with so many cars, models in the market, it is hard to find out which car has a high maintenance cost/index that is authentic source.While buying a car we spend a lot of time different features and also maintenance. But there's no platform which tells us the maintenance cost that we'll have to pay after buying the car. A system that shows the health and Maintenance Index of various components of car models or car parts based on multiple factors is needed. We have created this platform for all these problems")
+    st.write("In our system we show the health and maintenance Index of various components of car models or car parts based on multiple factors.Also the probablity of replacement of a particular car component after the car is bought. We can also compare two different car models based on maintenence.This will help new buyers to understand the maintenance costs of a certain model and probability of which car part requires more often servicing /change, OEM’s to understand which part is requiring frequent change so they can improve that component and needs to be recalled and made better in the new models ")
+    st.subheader('"Know your car\'s life before you buy it!"')
+    st.text("\n")
+    st.text("\n")
+    st.text("\n")
+    st.text("\n")
+    st.text("\n")
+    st.text(" \n BY TEAM \n Akshata Jedhe \n Juee Ashtaputre \n Payal Mehta \n Riya Kulkarni \n Shreya Pawaskar")
     
 app = MultiPage()
 # Add pages
 app.add_page("Home",home)
 app.add_page("About",about)
+app.add_page("Know more about your Car",know)
 app.add_page("Compare",compare)
+app.add_page("Visualise",visualize)
 app.run()
