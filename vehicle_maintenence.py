@@ -43,18 +43,18 @@ from pandas import DataFrame
 # --------------------------------------- KNOW information about your CAR ---------------------------------------------------
 def know():
     st.subheader("INFORMATION ABOUT YOUR CAR")
-    select = st.selectbox('Company', ['Hyundai','Ford','Honda','KIA'],key=100)
+    select = st.selectbox('Company', ['Hyundai','Ford','Honda','KIA'])
     if select =='Hyundai':
-        select1 = st.selectbox('Model', ['All New Santro', 'Creta', 'Grand i10','i20'],key=200)
+        select1 = st.selectbox('Model', ['All New Santro', 'Creta', 'Grand i10','i20'])
     if select == 'Ford':
-        select1 = st.selectbox('Model', ['Ecosports', 'Figo',],key=300)
+        select1 = st.selectbox('Model', ['Ecosports', 'Figo',])
     if select == 'Honda':
-        select1 = st.selectbox('Model', ['Amaze', 'City(2014)', 'WR-V'],key=400)
+        select1 = st.selectbox('Model', ['Amaze', 'City(2014)', 'WR-V'])
     if select == 'KIA':
-        select1 = st.selectbox('Model', ['Carnival'],key=500)
+        select1 = st.selectbox('Model', ['Carnival'])
 
-    select2 = st.selectbox('City', ['Mumbai','Delhi','Srinagar','Shimla','Vishakhapattnam'],key=600)
-    select4 = st.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'],key=700)
+    select2 = st.selectbox('City', ['Mumbai','Delhi','Srinagar','Shimla','Vishakhapattnam'])
+    select4 = st.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'])
     select3 = st.text_input('Enter Age of Vehicle here:')
     st.write("Check show data to get the information.")
 
@@ -184,13 +184,13 @@ def compare():
     
     str1.subheader("COMPARE TWO CARS")
     str1.write("ENTER DETAILS OF CAR 1")
-    selectt = str1.selectbox('Company Name', ['Hyundai','Ford','Honda','KIA'],key=40)
+    selectt = str1.selectbox('Company Name', ['Hyundai','Ford','Honda','KIA'])
     if selectt =='Hyundai':
-        selectt1 = str1.selectbox('Model Name', ['All New Santro', 'Creta', 'Grand i10','i20'],key=8)
+        selectt1 = str1.selectbox('Model Name', ['All New Santro', 'Creta', 'Grand i10','i20'])
     if selectt == 'Ford':
-        selectt1 = str1.selectbox('Model Name', ['Ecosports', 'Figo',],key=12)
+        selectt1 = str1.selectbox('Model Name', ['Ecosports', 'Figo',])
     if selectt == 'Honda':
-        selectt1 = str1.selectbox('Model Name', ['Amaze', 'City(2014)', 'WR-V'],key=16)
+        selectt1 = str1.selectbox('Model Name', ['Amaze', 'City(2014)', 'WR-V'])
     if selectt == 'KIA':
         selectt1 = str1.selectbox('Model Name', ['Carnival'],key=20)
 
