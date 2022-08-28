@@ -12,6 +12,15 @@ st.title("CARIFY - VEHICLE MAINTENENCE")
 st.markdown("WELCOME TO CARIFY 💥")
 st.write("          HOME")
 
+padding = 0
+st.markdown(f""" <style>
+    .reportview-container .main .block-container{{
+        padding-top: {padding}rem;
+        padding-right: {padding}rem;
+        padding-left: {padding}rem;
+        padding-bottom: {padding}rem;
+    }} </style> """, unsafe_allow_html=True)
+
 from PIL import Image
 img=Image.open('Images/toyota.jpeg')
 st.image(img, width=445)
