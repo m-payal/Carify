@@ -59,158 +59,151 @@ def know():
     st.write("Check show data to get the information.")
 
     # ----------------------------------- PROBABILITY ------------------------------------------------
-    import numpy as np
-    import scipy.stats
-    import pandas as pd
-    import matplotlib
-    if st.checkbox("Show data", False):
-        #st.write(DATA_URL.columns)
-        grouped=DATA_URL.groupby(['Company','Model','Fuel','City'])
-        g=grouped.get_group((select,select1,select4,select2))
-        st.write(g)
+    #st.write(DATA_URL.columns)
+    grouped=DATA_URL.groupby(['Company','Model','Fuel','City'])
+    g=grouped.get_group((select,select1,select4,select2))
+    st.write(g)
 
-        from sklearn.model_selection import train_test_split
-        d=g.loc[g["Age of Vehicle"] == select3]
-        if(d['AC Dust Filter'].values == [0]):
-               st.write("Probability of getting AC Dust Filter changed")
-               st.write(0, "%")
-        else:
-            st.write("Probability of getting AC Dust Filter changed")
-            st.write(100, "%")
-        if(d['Engine oil'].values == [0]):
-               st.write("Probability of getting Engine oil changed")
-               st.write(0, "%")
-        else:
-            st.write("Probability of getting Engine oil changed")
-            st.write(100, "%")
-        if(d['Air cleaner filter'].values == [0]):
-               st.write("Probability of getting Air cleaner filter changed")
-               st.write(0, "%")
-        else:
-            st.write("Probability of getting Air cleaner filter changed")
-            st.write(100, "%")
-    #-----------------------------------------------------------------------------------
-        df=g
+    from sklearn.model_selection import train_test_split
+    d=g.loc[g["Age of Vehicle"] == select3]
+    if(d['AC Dust Filter'].values == [0]):
+           st.write("Probability of getting AC Dust Filter changed")
+           st.write(0, "%")
+    else:
+        st.write("Probability of getting AC Dust Filter changed")
+        st.write(100, "%")
+    if(d['Engine oil'].values == [0]):
+           st.write("Probability of getting Engine oil changed")
+           st.write(0, "%")
+    else:
+        st.write("Probability of getting Engine oil changed")
+        st.write(100, "%")
+    if(d['Air cleaner filter'].values == [0]):
+           st.write("Probability of getting Air cleaner filter changed")
+           st.write(0, "%")
+    else:
+        st.write("Probability of getting Air cleaner filter changed")
+        st.write(100, "%")
+#-----------------------------------------------------------------------------------
+    df=g
 
-        X1 = df.iloc[:, 4:23].values
-        y1 = df.iloc[:, 23].values
-        df.head()
-        X1_train, X1_test, y1_train, y1_test = train_test_split(X1, y1, test_size=0.24, random_state=42)
-        from sklearn.naive_bayes import GaussianNB as gnb
+    X1 = df.iloc[:, 4:23].values
+    y1 = df.iloc[:, 23].values
+    df.head()
+    X1_train, X1_test, y1_train, y1_test = train_test_split(X1, y1, test_size=0.24, random_state=42)
+    from sklearn.naive_bayes import GaussianNB as gnb
 
-        ### create classifier
-        clf = gnb()
-        ### fit the classifier on the training features and labels
-        clf.fit(X1_train, y1_train)
-        y1_predict = clf.predict(X1_test)
-        predictions3 = [np.round(value) for value in y1_predict]
-        accuracy = accuracy_score(y1_test, predictions3)
-        st.write("Drain washer Accuracy: %.2f%%" % (accuracy * 100.0))
+    ### create classifier
+    clf = gnb()
+    ### fit the classifier on the training features and labels
+    clf.fit(X1_train, y1_train)
+    y1_predict = clf.predict(X1_test)
+    predictions3 = [np.round(value) for value in y1_predict]
+    accuracy = accuracy_score(y1_test, predictions3)
+    st.write("Drain washer Accuracy: %.2f%%" % (accuracy * 100.0))
 
-        #**************************************
+    #**************************************
 
-        X1 = df.iloc[:, 4:22].values
-        y1 = df.iloc[:, 22].values
-        df.head()
-        X1_train, X1_test, y1_train, y1_test = train_test_split(X1, y1, test_size=0.24, random_state=42)
-        from sklearn.naive_bayes import GaussianNB as gnb
+    X1 = df.iloc[:, 4:22].values
+    y1 = df.iloc[:, 22].values
+    df.head()
+    X1_train, X1_test, y1_train, y1_test = train_test_split(X1, y1, test_size=0.24, random_state=42)
+    from sklearn.naive_bayes import GaussianNB as gnb
 
-        ### create classifier
-        clf = gnb()
-        ### fit the classifier on the training features and labels
-        clf.fit(X1_train, y1_train)
-        y1_predict = clf.predict(X1_test)
-        predictions3 = [np.round(value) for value in y1_predict]
-        accuracy = accuracy_score(y1_test, predictions3)
-        st.write("Transmission fluid Accuracy: %.2f%%" % (accuracy * 100.0))
+    ### create classifier
+    clf = gnb()
+    ### fit the classifier on the training features and labels
+    clf.fit(X1_train, y1_train)
+    y1_predict = clf.predict(X1_test)
+    predictions3 = [np.round(value) for value in y1_predict]
+    accuracy = accuracy_score(y1_test, predictions3)
+    st.write("Transmission fluid Accuracy: %.2f%%" % (accuracy * 100.0))
 
-        #***************************************
+    #***************************************
 
-        X1 = df.iloc[:, 4:15].values
-        y1 = df.iloc[:, 15].values
-        df.head()
-        X1_train, X1_test, y1_train, y1_test = train_test_split(X1, y1, test_size=0.30, random_state=42)
-        from sklearn.naive_bayes import GaussianNB as gnb
+    X1 = df.iloc[:, 4:15].values
+    y1 = df.iloc[:, 15].values
+    df.head()
+    X1_train, X1_test, y1_train, y1_test = train_test_split(X1, y1, test_size=0.30, random_state=42)
+    from sklearn.naive_bayes import GaussianNB as gnb
 
-        ### create classifier
-        clf = gnb()
-        ### fit the classifier on the training features and labels
-        clf.fit(X1_train, y1_train)
-        y1_predict = clf.predict(X1_test)
-        predictions3 = [np.round(value) for value in y1_predict]
-        accuracy = accuracy_score(y1_test, predictions3)
-        st.write("spark plug Accuracy: %.2f%%" % (accuracy * 100.0))
+    ### create classifier
+    clf = gnb()
+    ### fit the classifier on the training features and labels
+    clf.fit(X1_train, y1_train)
+    y1_predict = clf.predict(X1_test)
+    predictions3 = [np.round(value) for value in y1_predict]
+    accuracy = accuracy_score(y1_test, predictions3)
+    st.write("spark plug Accuracy: %.2f%%" % (accuracy * 100.0))
 
-        #****************************************
+    #****************************************
 
-        X1 = df.iloc[:, 4:26].values
-        y1 = df.iloc[:, 25].values
-        df.head()
-        X1_train, X1_test, y1_train, y1_test = train_test_split(X1, y1, test_size=0.25, random_state=42)
-        from sklearn.naive_bayes import GaussianNB as gnb
+    X1 = df.iloc[:, 4:26].values
+    y1 = df.iloc[:, 25].values
+    df.head()
+    X1_train, X1_test, y1_train, y1_test = train_test_split(X1, y1, test_size=0.25, random_state=42)
+    from sklearn.naive_bayes import GaussianNB as gnb
 
-        ### create classifier
-        clf = gnb()
-        ### fit the classifier on the training features and labels
-        clf.fit(X1_train, y1_train)
-        y1_predict = clf.predict(X1_test)
-        predictions3 = [np.round(value) for value in y1_predict]
-        accuracy = accuracy_score(y1_test, predictions3)
-        st.write("Part cost Accuracy: %.2f%%" % (accuracy * 100.0))
-        
-        fig = plt.figure()
-        left=df["Mileage"]
-        height=df["Total cost"]
-        #tick_label=['Mumbai','Delhi','Vishakhapattanam','Srinagar']
-        plt.scatter(left,height, color=['orange'])
-        plt.xlabel('Mileage')
-        plt.ylabel('Total cost')
-        st.plotly_chart(fig)
+    ### create classifier
+    clf = gnb()
+    ### fit the classifier on the training features and labels
+    clf.fit(X1_train, y1_train)
+    y1_predict = clf.predict(X1_test)
+    predictions3 = [np.round(value) for value in y1_predict]
+    accuracy = accuracy_score(y1_test, predictions3)
+    st.write("Part cost Accuracy: %.2f%%" % (accuracy * 100.0))
+
+    fig = plt.figure()
+    left=df["Mileage"]
+    height=df["Total cost"]
+    #tick_label=['Mumbai','Delhi','Vishakhapattanam','Srinagar']
+    plt.scatter(left,height, color=['orange'])
+    plt.xlabel('Mileage')
+    plt.ylabel('Total cost')
+    st.plotly_chart(fig)
         
  # -------------------------------- COMPARISON ----------------------------------------------------------
 def compare():
 
-    import streamlit as str1
-    
-    str1.subheader("COMPARE TWO CARS")
-    str1.write("ENTER DETAILS OF CAR 1")
-    selectt = str1.selectbox('Company Name', ['Hyundai','Ford','Honda','KIA'])
+    st1.subheader("COMPARE TWO CARS")
+    st1.write("ENTER DETAILS OF CAR 1")
+    selectt = st1.selectbox('Company Name', ['Hyundai','Ford','Honda','KIA'])
     if selectt =='Hyundai':
-        selectt1 = str1.selectbox('Model Name', ['All New Santro', 'Creta', 'Grand i10','i20'])
+        selectt1 = st1.selectbox('Model Name', ['All New Santro', 'Creta', 'Grand i10','i20'])
     if selectt == 'Ford':
-        selectt1 = str1.selectbox('Model Name', ['Ecosports', 'Figo',])
+        selectt1 = st1.selectbox('Model Name', ['Ecosports', 'Figo',])
     if selectt == 'Honda':
-        selectt1 = str1.selectbox('Model Name', ['Amaze', 'City(2014)', 'WR-V'])
+        selectt1 = st1.selectbox('Model Name', ['Amaze', 'City(2014)', 'WR-V'])
     if selectt == 'KIA':
-        selectt1 = str1.selectbox('Model Name', ['Carnival'])
+        selectt1 = st1.selectbox('Model Name', ['Carnival'])
 
-    selectt2 = str1.selectbox('City', ['Mumbai','Delhi','Srinagar','Shimla','Vishakhapattnam'])
-    selectt4 = str1.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'])
-    selectt3 = str1.slider("Age of the vehicle.", 0, 200)
+    selectt2 = st1.selectbox('City', ['Mumbai','Delhi','Srinagar','Shimla','Vishakhapattnam'],key=16)
+    selectt4 = st1.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'])
+    selectt3 = st1.slider("Age of the vehicle.", 0, 200)
 
-    str1.write("ENTER DETAILS OF CAR 2")
-    selecttt = str1.selectbox('Company', ['Hyundai', 'Ford', 'Honda', 'KIA'])
+    st1.write("ENTER DETAILS OF CAR 2")
+    selecttt = st1.selectbox('Company', ['Hyundai', 'Ford', 'Honda', 'KIA'])
     if selecttt == 'Hyundai':
-        selecttt1 = str1.selectbox('Model Name.', ['All New Santro', 'Creta', 'Grand i10', 'i20'])
+        selecttt1 = st1.selectbox('Model Name.', ['All New Santro', 'Creta', 'Grand i10', 'i20'])
     if selectt == 'Ford':
-        selecttt1 = str1.selectbox('Model Name.', ['Ecosports', 'Figo', ])
+        selecttt1 = st1.selectbox('Model Name.', ['Ecosports', 'Figo', ])
     if selecttt == 'Honda':
-        selecttt1 = str1.selectbox('Model Name.', ['Amaze', 'City(2014)', 'WR-V'])
+        selecttt1 = st1.selectbox('Model Name.', ['Amaze', 'City(2014)', 'WR-V'])
     if selectt == 'KIA':
-        selecttt1 = str1.selectbox('Model Name.', ['Carnival'])
+        selecttt1 = st1.selectbox('Model Name.', ['Carnival'])
 
-    sel2 = str1.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapattnam'],key=17)
-    sel4 = str1.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'])
-    sel3 = str1.slider("Age of the vehicle", 0, 200)
+    sel2 = st1.selectbox('City', ['Mumbai', 'Delhi', 'Srinagar', 'Shimla', 'Vishakhapattnam'],key=17)
+    sel4 = st1.selectbox('Fuel', ['Petrol','1.1 Petrol','1.2L Petrol','1.5L Petrol','Diesel','1.4L Diesel','1.5L Diesel','2.2L Diesel'])
+    sel3 = st1.slider("Age of the vehicle", 0, 200)
 
-    if str1.button('Compare'):
-        str1.write("Comparing in progress!")
+    if st1.button('Compare'):
+        st1.write("Comparing in progress!")
         grouped = DATA_URL.groupby(['Company', 'Model', 'Fuel', 'City'])
         g = grouped.get_group((selectt, selectt1, selectt4, selectt2))
-        str1.write(g)
+        st1.write(g)
 
         g1 = grouped.get_group((selecttt, selecttt1, sel4, sel2))
-        str1.write(g1)
+        st1.write(g1)
  
 
 
