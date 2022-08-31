@@ -10,7 +10,6 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
 import math
 from socket import socket
 from pandas import DataFrame
@@ -142,15 +141,6 @@ def know():
     st.write("spark plug Probablity: %.2f%%" % (accuracy * 100.0))
 
     #****************************************
-
-    X1 = df.iloc[:, 4:26].values
-    y1 = df.iloc[:, 25].values
-    df.head()
-    X1_train, X1_test, y1_train, y1_test = train_test_split(X1, y1, test_size=0.25, random_state=42)
-
-    reg = LinearRegression().fit(X1_train, y1_train)
-    y1_predict = reg.predict(X1_test)
-    st.write("Total Parts cost : %.2f%%" % (y1_predict))
 
        
  # -------------------------------- COMPARISON ----------------------------------------------------------
