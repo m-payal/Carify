@@ -50,7 +50,7 @@ def know():
     if select =='Hyundai':
         select1 = st.selectbox('Model', ['All New Santro', 'Creta', 'Grand i10','i20'])
     if select == 'Ford':
-        select1 = st.selectbox('Model', ['Ecosports', 'Figo',])
+        select1 = st.selectbox('Model', ['Ecosport', 'Figo',])
     if select == 'Honda':
         select1 = st.selectbox('Model', ['Amaze', 'City(2014)', 'WR-V'])
     if select == 'KIA':
@@ -191,7 +191,7 @@ def compare():
     if selecttt == 'Hyundai':
         selecttt1 = st.selectbox('Model Name.', ['All New Santro', 'Creta', 'Grand i10', 'i20'])
     if selectt == 'Ford':
-        selecttt1 = st.selectbox('Model Name.', ['Ecosport', 'Figo', ])
+        selecttt1 = st.selectbox('Model Name.', ['Ecosport', 'Figo'])
     if selecttt == 'Honda':
         selecttt1 = st.selectbox('Model Name.', ['Amaze', 'City (2014)', 'WR-V'])
     if selectt == 'KIA':
