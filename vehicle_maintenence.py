@@ -165,7 +165,7 @@ def compare():
     selectt3 = st.slider("Age of the vehicle.", 0, 200)
 
     st.write("ENTER DETAILS OF CAR 2")
-    selecttt = st.selectbox('Company', ['Hyundai', 'Ford', 'Honda', 'KIA'],key="2")
+    selecttt = st.selectbox('Company', ['Hyundai', 'Ford', 'Honda', 'KIA'])
     if selecttt == 'Hyundai':
         selecttt1 = st.selectbox('Model Name.', ['All New Santro', 'Creta', 'Grand i10', 'i20'])
     if selectt == 'Ford':
