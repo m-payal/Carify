@@ -10,9 +10,11 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
 import math
 from socket import socket
 from pandas import DataFrame
+
 
 DATE_TIME = "date/time"
 DATA_URL = pd.read_csv("Datasets/SIH.csv",error_bad_lines=False)
@@ -103,7 +105,7 @@ def know():
     y1_predict = clf.predict(X1_test)
     predictions3 = [np.round(value) for value in y1_predict]
     accuracy = accuracy_score(y1_test, predictions3)
-    st.write("Drain washer Accuracy: %.2f%%" % (accuracy * 100.0))
+    st.write("Drain washer Accuracy Probality: %.2f%%" % (accuracy * 100.0))
 
     #**************************************
 
@@ -120,7 +122,7 @@ def know():
     y1_predict = clf.predict(X1_test)
     predictions3 = [np.round(value) for value in y1_predict]
     accuracy = accuracy_score(y1_test, predictions3)
-    st.write("Transmission fluid Accuracy: %.2f%%" % (accuracy * 100.0))
+    st.write("Transmission fluid Probablity: %.2f%%" % (accuracy * 100.0))
 
     #***************************************
 
@@ -137,7 +139,7 @@ def know():
     y1_predict = clf.predict(X1_test)
     predictions3 = [np.round(value) for value in y1_predict]
     accuracy = accuracy_score(y1_test, predictions3)
-    st.write("spark plug Accuracy: %.2f%%" % (accuracy * 100.0))
+    st.write("spark plug Probablity: %.2f%%" % (accuracy * 100.0))
 
     #****************************************
 
@@ -145,26 +147,12 @@ def know():
     y1 = df.iloc[:, 25].values
     df.head()
     X1_train, X1_test, y1_train, y1_test = train_test_split(X1, y1, test_size=0.25, random_state=42)
-    from sklearn.naive_bayes import GaussianNB as gnb
 
-    ### create classifier
-    clf = gnb()
-    ### fit the classifier on the training features and labels
-    clf.fit(X1_train, y1_train)
-    y1_predict = clf.predict(X1_test)
-    predictions3 = [np.round(value) for value in y1_predict]
-    accuracy = accuracy_score(y1_test, predictions3)
-    st.write("Part cost Accuracy: %.2f%%" % (accuracy * 100.0))
+    reg = LinearRegression().fit(X1_train, y1_train)
+    y1_predict = reg.predict(X1_test)
+    st.write("Total Parts cost : %.2f%%" % (y1_predict))
 
-    fig = plt.figure()
-    left=df["Mileage"]
-    height=df["Total cost"]
-    #tick_label=['Mumbai','Delhi','Vishakhapattanam','Srinagar']
-    plt.scatter(left,height, color=['orange'])
-    plt.xlabel('Mileage')
-    plt.ylabel('Total cost')
-    st.plotly_chart(fig)
-        
+       
  # -------------------------------- COMPARISON ----------------------------------------------------------
 def compare():
 
