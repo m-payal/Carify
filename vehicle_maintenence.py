@@ -150,7 +150,7 @@ def compare():
     
     st.subheader("COMPARE TWO CARS")
     st.write("ENTER DETAILS OF CAR 1")
-    selectt = st.selectbox('Company Name', ['Hyundai','Ford','Honda','KIA'],key="1")
+    selectt = st.selectbox('Company Name', ['Hyundai','Ford','Honda','KIA'])
     if selectt =='Hyundai':
         selectt1 = st.selectbox('Model Name', ['All New Santro', 'Creta', 'Grand i10','i20'])
     if selectt == 'Ford':
