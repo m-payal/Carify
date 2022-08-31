@@ -176,7 +176,7 @@ def compare():
     if selectt =='Hyundai':
         selectt1 = st.selectbox('Model Name', ['All New Santro', 'Creta', 'Grand i10','i20'])
     if selectt == 'Ford':
-        selectt1 = st.selectbox('Model Name', ['Ecosports', 'Figo',])
+        selectt1 = st.selectbox('Model Name', ['Ecosports', 'Figo'])
     if selectt == 'Honda':
         selectt1 = st.selectbox('Model Name', ['Amaze', 'City(2014)', 'WR-V'])
     if selectt == 'KIA':
